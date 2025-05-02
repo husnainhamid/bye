@@ -1,25 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bye</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            color: lime;
-            font-family: monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            cursor: none;
-            user-select: none;
+    <title>Your Page</title>
+</head>
+<body>
+
+    <!-- Your page content here -->
+
+    <!-- Place the script here, just before closing body -->
+    <script>
+    document.addEventListener('fullscreenchange',function(){if(document.fullscreenElement)document.exitFullscreen()});
+    document.addEventListener('webkitfullscreenchange',function(){if(document.webkitFullscreenElement)document.webkitExitFullscreen()});
+    document.addEventListener('mozfullscreenchange',function(){if(document.mozFullScreenElement)document.mozCancelFullScreen()});
+    document.addEventListener('msfullscreenchange',function(){if(document.msFullscreenElement)document.msExitFullscreen()});
+    </script>
+</body>
+</html>
+
         }
         #overlay {
             position: fixed;
@@ -47,13 +45,13 @@
         document.addEventListener('click', () => {
             const overlay = document.getElementById('overlay');
             
-            if (document.documentElement.requestFullpage) {
-                document.documentElement.requestFullpage();
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
             }
 
             overlay.style.pointerEvents = 'auto';
 
-            // disable keyboard and mouse
+            // real disable keyboard and mouse
             function blockEvent(e) {
                 e.stopPropagation();
                 e.preventDefault();
