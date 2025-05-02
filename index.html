@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prank Freeze Screen</title>
+    <title>bye</title>
     <style>
         body, html {
             margin: 0;
@@ -38,7 +38,7 @@
 <body>
     <div id="overlay">
         <div>
-            <p>System Freeze Detected...</p>
+            <p>=RANY dy uty RANA...</p>
             <p>Attempting Recovery...</p>
         </div>
     </div>
@@ -47,23 +47,23 @@
         document.addEventListener('click', () => {
             const overlay = document.getElementById('overlay');
             
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
+            if (document.documentElement.requestFullpage) {
+                document.documentElement.requestFullpage();
             }
 
             overlay.style.pointerEvents = 'auto';
 
-            // Fake disable keyboard and mouse
+            // disable keyboard and mouse
             function blockEvent(e) {
                 e.stopPropagation();
                 e.preventDefault();
                 return false;
             }
-            window.addEventListener('keydown', blockEvent, true);
-            window.addEventListener('keyup', blockEvent, true);
-            window.addEventListener('keypress', blockEvent, true);
-            window.addEventListener('mousemove', blockEvent, true);
-            window.addEventListener('mousedown', blockEvent, true);
+            window.addEventListener('keydown', disable , true);
+            window.addEventListener('keyup', disable , true);
+            window.addEventListener('keypress', disable , true);
+            window.addEventListener('mousemove', disable , true);
+            window.addEventListener('mousedown', disable , true);
 
             setTimeout(() => {
                 // Release after 30 seconds
@@ -77,7 +77,7 @@
                     document.exitFullscreen();
                 }
 
-                overlay.innerHTML = '<p>😂 Gotcha! Prank over.</p>';
+                overlay.innerHTML = '<p> BYE.</p>';
                 overlay.style.cursor = 'default';
             }, 30000);
         }, { once: true });
